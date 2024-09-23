@@ -5,6 +5,16 @@
         <h5 class="fw-bold text-light mt-2">ระบบแจ้งซ่อม</h5>
     </div>
     <ul class="sidebar-nav overflow-auto" style="margin-top: 80px; max-height: 90vh; padding-bottom: 30px">
+        <li class="text-light-emphasis">รายงาน</li>
+        <li class="px-2">
+            <a class="rounded <?= (defending($_GET['p']) == 'report') ? "active" : "" ?> " href="?s=<?= defending($_GET['s']); ?>&p=report">
+                <div class="d-flex align-items-center">
+                    <i class='bx bxs-report'></i>
+                    <span class="">รายงาน</span>
+                </div>
+            </a>
+        </li>
+
         <li class="text-light-emphasis">ผู้แจ้งงาน</li>
         <li class="px-2">
             <a class="rounded <?= (defending($_GET['p']) == 'request') ? "active" : "" ?> " href="?s=<?= defending($_GET['s']); ?>&p=request">

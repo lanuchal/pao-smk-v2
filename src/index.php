@@ -18,7 +18,7 @@ $_SESSION['username'] = "10";
 //     }
 // }
 
-if (($system == "menu" &&  $route == "menu") || ($system == "login" &&  $route == "login")) {
+if (($system == "menu" ||  $route == "post" || $system == "login")) {
     include 'layout/bank.php';
 } else {
     include 'layout/dashboard.php';

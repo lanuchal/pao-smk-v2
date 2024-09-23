@@ -1,15 +1,9 @@
 <?php
 
-includeIfExists('systems/equipment/model/list.php');
-includeIfExists('systems/employee/model/affiliation.php');
-includeIfExists('systems/' . defending($_GET['s']) . '/model/type.php');
 
 if (isset($_POST['create'])) {
-    $data['code'] = defending($_POST['code']);
-    $data['request_date'] = defending($_POST['request_date']);
-    $data['detail'] = defending($_POST['detail']);
-    $data['helpdesk_type_id'] = defending($_POST['helpdesk_type_id']);
-    $result = create_request($data);
+    $data['name'] = defending($_POST['name']);
+    $result = create_lms_type($data);
     if ($result) {
         set_flash_message('success', 'เพิ่มข้อมูลสำเร็จ');
     } else {
@@ -20,11 +14,8 @@ if (isset($_POST['create'])) {
 
 if (isset($_POST['update'])) {
     $data['id'] = defending($_POST['id']);
-    $data['code'] = defending($_POST['code']);
-    $data['request_date'] = defending($_POST['request_date']);
-    $data['detail'] = defending($_POST['detail']);
-    $data['helpdesk_type_id'] = defending($_POST['helpdesk_type_id']);
-    $result = update_request($data);
+    $data['name'] = defending($_POST['name']);
+    $result = update_lms_type($data);
     if ($result) {
         set_flash_message('success', 'แก้ไขข้อมูลสำเร็จ');
     } else {
@@ -36,7 +27,7 @@ if (isset($_POST['update'])) {
 if (isset($_POST['delete'])) {
     $data['id'] = defending($_POST['id']);
     $data['name'] = defending($_POST['name']);
-    $result = delete_request($data);
+    $result = delete_lms_type($data);
     if ($result) {
         set_flash_message('success', 'ลบข้อมูลสำเร็จ');
     } else {
@@ -47,15 +38,21 @@ if (isset($_POST['delete'])) {
 
 
 $dataheader = [
-    "title" => "แจ้งงาน",
-    "icon" => "bx bxs-inbox",
+    "title" => "ประเภท",
+    "icon" => "bx bxs-layer",
     "list" => [
         [
-            "data" => "แจ้งงาน",
+            "data" => "ประเภท",
             "active" => true
         ]
     ]
 ];
 generateHeaderHTML($dataheader, $system, $route);
 
+// get all data 
 
+// $lms_types = find_all_lms_type();
+
+
+// print_r($lms_types);
+// echo "waaa<br>";

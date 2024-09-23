@@ -22,7 +22,7 @@ function find_all_request()
                 ON 
                     helpdesk.active_user = z_user.user_id
             WHERE
-                helpdesk.deleted = 0 AND helpdesk.create_by = '".$_SESSION['username']."'";
+                helpdesk.deleted = 0 AND helpdesk.request_user = '" . $_SESSION['username'] . "'";
     $result = mysqli_query($GLOBALS['CON'], $sql);
 
     if ($result) {
@@ -50,7 +50,7 @@ function find_one_request($data)
                 ON 
                     helpdesk.helpdesk_status_id = helpdesk_status.id
             WHERE
-                helpdesk.deleted = 0 WHERE helpdesk_type.id = ? AND deleted = 0";
+                helpdesk.deleted = 0 WHERE helpdesk_type.id = ? ";
     $stmt = mysqli_prepare($GLOBALS['CON'], $sql);
     mysqli_stmt_bind_param($stmt, 'i', $data['id']);
     mysqli_stmt_execute($stmt);
@@ -66,7 +66,7 @@ function find_one_request($data)
 // Function to create a new request
 function create_request($data)
 {
-    $sql = "INSERT INTO helpdesk (code, request_date, detail, request_user, helpdesk_type_id, create_by) VALUES ('{$data['code']}', '{$data['request_date']}', '{$data['detail']}', '{$_SESSION['username']}', '{$data['helpdesk_type_id']}', '{$_SESSION['username']}')";
+    $sql = "INSERT INTO helpdesk (code, request_date, detail, request_user, helpdesk_type_id, helpdesk_status_id, create_by) VALUES ('{$data['code']}', '{$data['request_date']}', '{$data['detail']}', '{$_SESSION['username']}', '{$data['helpdesk_type_id']}', '4', '{$_SESSION['username']}')";
     // echo $sql;
     // exit();
     $result = mysqli_query($GLOBALS['CON'], $sql);

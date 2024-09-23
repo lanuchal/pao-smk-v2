@@ -27,3 +27,16 @@ if (isset($_POST['remark'])) {
     }
     echo "<script>window.location.href='';</script>";
 }
+
+
+$dataheader = [
+    "title" => "รายการแจ้งงาน",
+    "icon" => "bx bx-list-ol",
+    "list" => [
+        [
+            "data" => "รายการแจ้งงาน",
+            "active" => true
+        ]
+    ]
+];
+generateHeaderHTML($dataheader, $system, $route);

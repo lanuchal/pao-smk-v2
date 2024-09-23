@@ -43,9 +43,8 @@ function update_status_job($data)
 
 function update_detail_active($data)
 {
-    $sql = "UPDATE helpdesk SET detail_active = '{$data['detail_active']}', active_user = '{$_SESSION['username']}' WHERE id = " . intval($data['id']);
+    $sql = "UPDATE helpdesk SET detail_active = '{$data['detail_active']}', active_user = '{$_SESSION['username']}' ,helpdesk_status_id='3' WHERE id = " . intval($data['id']);
 
     $result = mysqli_query($GLOBALS['CON'], $sql);
     return $result ? true : false;
 }
-

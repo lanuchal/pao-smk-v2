@@ -11,18 +11,17 @@
                 <div class="modal-body border-0">
                     <div class="row">
                         <div class="col-md-12 mb-3">
-                            <label for="code" class="form-label ps-3">รหัสพัสดุ</label>
+                            <label for="code" class="form-label ps-3">รหัสสินทรัพย์</label>
 
-                            <input type="text" class="form-control" name="code" id="code" list="codes" placeholder="รหัสพัสดุ" required>
 
-                            <datalist id="codes">
+                            <select class="form-select" name="code" required>
                                 <?php
                                 $equipments = find_all_equipment();
                                 foreach ($equipments as $row4) {  ?>
-                                    <option value="<?= $row4['property_code'] ?>"><?= $row4['property_name'] ?></option>
+                                    <option value="<?= $row4['property_code'] ?>"><?= $row4['property_code'] . " - " . $row4['property_name'] ?></option>
                                 <?php } ?>
+                            </select>
 
-                            </datalist>
 
                         </div>
                         <div class="col-md-6 mb-3">
@@ -71,8 +70,8 @@
     <table class="table table-hover " id="teble_data">
         <thead>
             <tr>
-                <th class="text-center" style="max-width: 5rem;">รหัสพัสดุ</th>
                 <th class="text-center" style="max-width: 5rem;">วันที่แจ้ง</th>
+                <th class="text-center" style="max-width: 5rem;">รหัสสินทรัพย์</th>
                 <th class="text-center">ปัญหา/อาการ</th>
                 <th class="text-center" style="max-width: 5rem;">ประเภท</th>
                 <th class="text-center" style="max-width: 5rem;">สถานะ</th>
@@ -86,8 +85,8 @@
             $requests = find_all_request();
             foreach ($requests as $row) { ?>
                 <tr>
-                    <td class="text-center"><?= $row['code']; ?></td>
                     <td class="text-start"><?= $row['request_date']; ?></td>
+                    <td class="text-center"><?= $row['code']; ?></td>
                     <td class="text-center"><?= $row['detail']; ?></td>
                     <td class="text-center"><?= $row['type_name']; ?></td>
                     <td class="text-center"><?= $row['status_name'] ? $row['status_name'] : "แจ้งงาน"; ?></td>
@@ -112,8 +111,15 @@
                                     <div class="row">
                                         <input type="hidden" name="id" value="<?= $row['id'] ?>">
                                         <div class="col-md-12 mb-3">
-                                            <label for="code" class="form-label ps-3">รหัสพัสดุ</label>
-                                            <input type="text" class="form-control" name="code" placeholder="รหัสพัสดุ" value="<?= $row['code'] ?>" required>
+                                            <label for="code" class="form-label ps-3">รหัสสินทรัพย์</label>
+
+                                            <select class="form-select" name="code" value="<?= $row['code'] ?>" required>
+                                                <?php
+                                                foreach ($equipments as $row5) {  ?>
+                                                    <option value="<?= $row5['property_code'] ?>"><?= $row5['property_code'] . " - " . $row5['property_name'] ?></option>
+                                                <?php } ?>
+                                            </select>
+
                                         </div>
                                         <div class="col-md-6 mb-3">
                                             <label for="request_date" class="form-label ps-3">วันที่แจ้ง</label>

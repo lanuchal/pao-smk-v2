@@ -27,7 +27,9 @@
                 </div>
             </a>
         </div>
-        <div class="col-6 col-sm-4 col-md-3 col-lg-3 col-xl-2 hoverbox mb-2 p-2" data-aos="zoom-in" data-aos-delay="200"><a class="link-secondary visible link-underline link-underline-opacity-0 h-100 w-100" href="#"><br>
+        <div class="col-6 col-sm-4 col-md-3 col-lg-3 col-xl-2 hoverbox mb-2 p-2" data-aos="zoom-in" data-aos-delay="200">
+        
+            <a class="link-secondary visible link-underline link-underline-opacity-0 h-100 w-100" href="?s=payroll&p=doc"><br>
                 <div class="card text-center border-0 shadow h-100 w-100">
                     <div class="card-body d-sm-flex justify-content-sm-center align-items-sm-center">
                         <div><img class="img-fluid" src="assets/img/income-statement_10434265.png" width="80">
@@ -59,7 +61,7 @@
             </a>
         </div>
         <div class="col-6 col-sm-4 col-md-3 col-lg-3 col-xl-2 hoverbox mb-2 p-2" data-aos="zoom-in" data-aos-delay="200">
-            <a class="link-secondary visible link-underline link-underline-opacity-0 h-100 w-100" href="?s=equipment&p=band"><br>
+            <a class="link-secondary visible link-underline link-underline-opacity-0 h-100 w-100" href="?s=equipment&p=list"><br>
                 <div class="card text-center border-0 shadow h-100 w-100">
                     <div class="card-body d-sm-flex justify-content-sm-center align-items-sm-center">
                         <div><img class="img-fluid" src="assets/img/computer_1865273.png" width="80">
@@ -81,7 +83,7 @@
             </a>
         </div>
         <div class="col-6 col-sm-4 col-md-3 col-lg-3 col-xl-2 hoverbox mb-2 p-2" data-aos="zoom-in" data-aos-delay="200">
-            <a class="link-secondary visible link-underline link-underline-opacity-0 h-100 w-100" href="?s=lms&p=type"><br>
+            <a class="link-secondary visible link-underline link-underline-opacity-0 h-100 w-100" href="?s=lms&p=doc"><br>
                 <div class="card text-center border-0 shadow h-100 w-100">
                     <div class="card-body d-sm-flex justify-content-sm-center align-items-sm-center">
                         <div><img class="img-fluid" src="assets/img/book-stack_3389081.png" width="80">
@@ -101,7 +103,7 @@
                 </div>
             </a>
         </div>
-        <div class="col-6 col-sm-4 col-md-3 col-lg-3 col-xl-2 hoverbox mb-2 p-2" data-aos="zoom-in" data-aos-delay="200"><a class="link-secondary visible link-underline link-underline-opacity-0 h-100 w-100" href="#"><br>
+        <!-- <div class="col-6 col-sm-4 col-md-3 col-lg-3 col-xl-2 hoverbox mb-2 p-2" data-aos="zoom-in" data-aos-delay="200"><a class="link-secondary visible link-underline link-underline-opacity-0 h-100 w-100" href="#"><br>
                 <div class="card text-center border-0 shadow h-100 w-100">
                     <div class="card-body d-sm-flex justify-content-sm-center align-items-sm-center">
                         <div><img class="img-fluid" src="assets/img/contract_17321031.png" width="80">
@@ -110,7 +112,7 @@
                     </div>
                 </div>
             </a>
-        </div>
+        </div> -->
         <div class="col-6 col-sm-4 col-md-3 col-lg-3 col-xl-2 hoverbox mb-2 p-2" data-aos="zoom-in" data-aos-delay="200"><a class="link-secondary visible link-underline link-underline-opacity-0 h-100 w-100" href="index.html"><br>
                 <div class="card text-center border-0 shadow h-100 w-100">
                     <div class="card-body d-sm-flex justify-content-sm-center align-items-sm-center">

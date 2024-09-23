@@ -11,7 +11,7 @@
                 <div class="modal-body border-0">
                     <div class="mb-3 text-center">
                         <label for="name" class="form-label">ชื่อ</label>
-                        <input type="text" class="form-control" name="name" placeholder="ชื่อสถานะ">
+                        <input type="text" class="form-control" name="name" placeholder="ชื่อประเภท">
                     </div>
                 </div>
                 <div class="modal-footer border-0">
@@ -47,22 +47,15 @@
         </thead>
         <tbody>
             <?php
-            $statuss = find_all_status();
-            foreach ($statuss as $row) { ?>
+            $lms_types = find_all_lms_type();
+            foreach ($lms_types as $row) { ?>
                 <tr>
                     <td class="text-center"><?= $row['id']; ?></td>
                     <td class="text-start"><?= $row['name']; ?></td>
                     <td class="text-center"><?= $row['update_time']; ?></td>
                     <td class="text-center">
-                        <?php
-
-                        if ($row['id'] > 4) { ?>
-                            <button class="btn btn-warning btn-sm" data-bs-toggle="modal" data-bs-target="#editModal<?= $row['id']; ?>"><i class='bx bxs-edit me-2'></i>แก้ไข</button>
-                            <button class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#deleteModal<?= $row['id']; ?>"><i class='bx bx-trash me-2'></i>ลบ</button>
-
-                        <?php  } else { ?>
-                            <i class='bx bxs-lock fs-4 text-secondary '></i>
-                        <?php  } ?>
+                        <button class="btn btn-warning btn-sm" data-bs-toggle="modal" data-bs-target="#editModal<?= $row['id']; ?>"><i class='bx bxs-edit me-2'></i>แก้ไข</button>
+                        <button class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#deleteModal<?= $row['id']; ?>"><i class='bx bx-trash me-2'></i>ลบ</button>
                     </td>
                 </tr>
                 <div class="modal fade" id="editModal<?= $row['id']; ?>" tabindex="-1" aria-labelledby="editModalLabel<?= $row['id']; ?>" aria-hidden="true">
@@ -79,7 +72,7 @@
                                     <div class="mb-3 text-center">
                                         <input type="hidden" name="id" value="<?= $row['id']; ?>">
                                         <label for="name" class="form-label">ชื่อ</label>
-                                        <input type="text" class="form-control" name="name" placeholder="ชื่อสถานะ" value="<?= $row['name']; ?>">
+                                        <input type="text" class="form-control" name="name" placeholder="ชื่อประเภท" value="<?= $row['name']; ?>">
                                     </div>
                                 </div>
                                 <div class="modal-footer border-0">
@@ -104,7 +97,7 @@
                                     <div class="mb-3 text-center">
                                         <input type="hidden" name="id" value="<?= $row['id']; ?>">
                                         <label for="name" class="form-label">ชื่อ</label>
-                                        <input type="text" class="form-control" name="name" placeholder="ชื่อสถานะ" value="<?= $row['name']; ?>" disabled>
+                                        <input type="text" class="form-control" name="name" placeholder="ชื่อประเภท" value="<?= $row['name']; ?>" disabled>
                                     </div>
                                 </div>
                                 <div class="modal-footer border-0">
