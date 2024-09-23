@@ -1,0 +1,28 @@
+.hoverbox a {
+  transition: transform 0.3s ease;
+  display: inline-block;
+}
+
+.hoverbox a:hover {
+  transform: scale(1.1);
+}
+
+.hoverbox:hover {
+  z-index: 10;
+}
+
+.sidebar-nav::-webkit-scrollbar-track {
+  background: none;
+}
+
+.sidebar-nav::-webkit-scrollbar-thumb {
+  background-color: #3e3e3e;
+  border-radius: 1rem;
+  border: 1px solid #000;
+}
+
+.sidebar-nav::-webkit-scrollbar {
+  width: 5px;
+}
+
+
