@@ -3,11 +3,6 @@ require_once "../assets/lib/excel/PHPExcel.php";
 
 if (isset($_POST['export'])) {
     $data_report = json_decode($_POST['data_report'], true);
-
-    // Uncomment this if you need to debug data
-    // print_r($data_report);
-
-    // Proceed with export if data is present
     if (!empty($data_report)) {
         export_to_excel($data_report);
     } else {
